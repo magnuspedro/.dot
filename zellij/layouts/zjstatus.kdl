@@ -1,0 +1,65 @@
+// Gruvbox: bg0 #282828 bg1 #3c3836 bg2 #504945 fg #ebdbb2 fg4 #a89984
+layout {
+    default_tab_template {
+        // Barra de cima: modo, sessão, abas, hora (zjstatus) — blocos retos, sem setas
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/wasm/zjstatus.wasm" {
+                format_left   "{mode}#[bg=#504945,fg=#fabd2f,bold] {session} #[bg=#3c3836] "
+                format_center "{tabs}"
+                format_right  "#[bg=#504945,fg=#ebdbb2] {datetime} "
+                format_space  "#[bg=#3c3836]"
+
+                hide_frame_for_single_pane "false"
+                mode_locked       "#[bg=#928374,fg=#282828,bold]  "
+                mode_normal       "#[bg=#b8bb26,fg=#282828,bold]  "
+                mode_pane         "#[bg=#83a598,fg=#282828,bold]  "
+                mode_tab          "#[bg=#d3869b,fg=#282828,bold]  "
+                mode_resize       "#[bg=#fe8019,fg=#282828,bold]  "
+                mode_move         "#[bg=#fe8019,fg=#282828,bold]  "
+                mode_scroll       "#[bg=#8ec07c,fg=#282828,bold]  "
+                mode_search       "#[bg=#8ec07c,fg=#282828,bold]  "
+                mode_enter_search "#[bg=#8ec07c,fg=#282828,bold]  "
+                mode_rename_tab   "#[bg=#d3869b,fg=#282828,bold]  "
+                mode_rename_pane  "#[bg=#83a598,fg=#282828,bold]  "
+                mode_session      "#[bg=#fb4934,fg=#282828,bold]  "
+                mode_prompt       "#[bg=#fabd2f,fg=#282828,bold]  "
+                mode_tmux         "#[bg=#fe8019,fg=#282828,bold]  "
+
+                // Abas em blocos, mesmo estilo dos atalhos da barra de baixo
+                tab_normal    "#[bg=#504945,fg=#ebdbb2] {index}{floating_indicator}{fullscreen_indicator}{sync_indicator} "
+                tab_active    "#[bg=#fabd2f,fg=#282828,bold] {index}{floating_indicator}{fullscreen_indicator}{sync_indicator} "
+                tab_separator "#[bg=#3c3836] "
+
+                tab_floating_indicator   " 󰉈"
+                tab_fullscreen_indicator " 󰊓"
+                tab_sync_indicator       " 󰓦"
+
+                datetime          "{format}"
+                datetime_format   "%H:%M"
+                datetime_timezone "America/Sao_Paulo"
+            }
+        }
+        children
+        // Barra de baixo: vazia no lock; atalhos por modo (zjstatus) — escritos à mão, atualizar se mudar keybinds
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/wasm/zjstatus.wasm" {
+                format_left  "{mode}"
+                format_space ""
+                hide_frame_for_single_pane "false"
+
+                mode_locked       ""
+                mode_normal       "#[bg=#504945,fg=#fabd2f,bold] p #[fg=#a89984] pane #[bg=#504945,fg=#fabd2f,bold] t #[fg=#a89984] tab #[bg=#504945,fg=#fabd2f,bold] r #[fg=#a89984] resize #[bg=#504945,fg=#fabd2f,bold] m #[fg=#a89984] move #[bg=#504945,fg=#fabd2f,bold] s #[fg=#a89984] scroll #[bg=#504945,fg=#fabd2f,bold] o #[fg=#a89984] session #[bg=#504945,fg=#fabd2f,bold] Esc #[fg=#a89984] back #[bg=#504945,fg=#fabd2f,bold] Ctrl q #[fg=#a89984] quit "
+                mode_pane         "#[bg=#504945,fg=#fabd2f,bold] hjkl #[fg=#a89984] focus #[bg=#504945,fg=#fabd2f,bold] n #[fg=#a89984] new #[bg=#504945,fg=#fabd2f,bold] d #[fg=#a89984] down #[bg=#504945,fg=#fabd2f,bold] r #[fg=#a89984] right #[bg=#504945,fg=#fabd2f,bold] x #[fg=#a89984] close #[bg=#504945,fg=#fabd2f,bold] f #[fg=#a89984] fullscreen #[bg=#504945,fg=#fabd2f,bold] w #[fg=#a89984] floating #[bg=#504945,fg=#fabd2f,bold] e #[fg=#a89984] embed #[bg=#504945,fg=#fabd2f,bold] c #[fg=#a89984] rename #[bg=#504945,fg=#fabd2f,bold] z #[fg=#a89984] frames #[bg=#504945,fg=#fabd2f,bold] Tab #[fg=#a89984] next "
+                mode_tab          "#[bg=#504945,fg=#fabd2f,bold] hjkl #[fg=#a89984] switch #[bg=#504945,fg=#fabd2f,bold] 1-9 #[fg=#a89984] go to #[bg=#504945,fg=#fabd2f,bold] n #[fg=#a89984] new #[bg=#504945,fg=#fabd2f,bold] x #[fg=#a89984] close #[bg=#504945,fg=#fabd2f,bold] r #[fg=#a89984] rename #[bg=#504945,fg=#fabd2f,bold] s #[fg=#a89984] sync #[bg=#504945,fg=#fabd2f,bold] b #[fg=#a89984] break #[bg=#504945,fg=#fabd2f,bold] [ ] #[fg=#a89984] break l/r #[bg=#504945,fg=#fabd2f,bold] Tab #[fg=#a89984] toggle "
+                mode_resize       "#[bg=#504945,fg=#fabd2f,bold] hjkl #[fg=#a89984] grow #[bg=#504945,fg=#fabd2f,bold] HJKL #[fg=#a89984] shrink #[bg=#504945,fg=#fabd2f,bold] + - #[fg=#a89984] size "
+                mode_move         "#[bg=#504945,fg=#fabd2f,bold] hjkl #[fg=#a89984] move #[bg=#504945,fg=#fabd2f,bold] n/Tab #[fg=#a89984] next #[bg=#504945,fg=#fabd2f,bold] p #[fg=#a89984] previous "
+                mode_scroll       "#[bg=#504945,fg=#fabd2f,bold] j/k #[fg=#a89984] line #[bg=#504945,fg=#fabd2f,bold] d/u #[fg=#a89984] half page #[bg=#504945,fg=#fabd2f,bold] h/l #[fg=#a89984] page #[bg=#504945,fg=#fabd2f,bold] f #[fg=#a89984] search #[bg=#504945,fg=#fabd2f,bold] e #[fg=#a89984] edit #[bg=#504945,fg=#fabd2f,bold] Ctrl c #[fg=#a89984] bottom "
+                mode_search       "#[bg=#504945,fg=#fabd2f,bold] n #[fg=#a89984] next #[bg=#504945,fg=#fabd2f,bold] p #[fg=#a89984] previous #[bg=#504945,fg=#fabd2f,bold] c #[fg=#a89984] case #[bg=#504945,fg=#fabd2f,bold] w #[fg=#a89984] wrap #[bg=#504945,fg=#fabd2f,bold] o #[fg=#a89984] whole word "
+                mode_enter_search "#[bg=#504945,fg=#fabd2f,bold] Enter #[fg=#a89984] search #[bg=#504945,fg=#fabd2f,bold] Esc #[fg=#a89984] cancel "
+                mode_rename_tab   "#[bg=#504945,fg=#fabd2f,bold] Enter #[fg=#a89984] ok #[bg=#504945,fg=#fabd2f,bold] Esc #[fg=#a89984] undo "
+                mode_rename_pane  "#[bg=#504945,fg=#fabd2f,bold] Enter #[fg=#a89984] ok #[bg=#504945,fg=#fabd2f,bold] Esc #[fg=#a89984] undo "
+                mode_session      "#[bg=#504945,fg=#fabd2f,bold] d #[fg=#a89984] detach #[bg=#504945,fg=#fabd2f,bold] w #[fg=#a89984] sessions #[bg=#504945,fg=#fabd2f,bold] c #[fg=#a89984] config #[bg=#504945,fg=#fabd2f,bold] p #[fg=#a89984] plugins #[bg=#504945,fg=#fabd2f,bold] a #[fg=#a89984] about "
+            }
+        }
+    }
+}

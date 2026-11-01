@@ -1,0 +1,133 @@
+// Gruvbox dark — paleta oficial
+// bg0 40 40 40 | bg1 60 56 54 | bg2 80 73 69 | bg3 102 92 84
+// fg 235 219 178 | fg4 168 153 132 | gray 146 131 116
+// red 251 73 52 | green 184 187 38 | yellow 250 189 47 | blue 131 165 152
+// purple 211 134 155 | aqua 142 192 124 | orange 254 128 25
+themes {
+    gruvbox-dark {
+        text_unselected {
+            base 235 219 178
+            background 60 56 54
+            emphasis_0 254 128 25
+            emphasis_1 142 192 124
+            emphasis_2 184 187 38
+            emphasis_3 211 134 155
+        }
+        text_selected {
+            base 235 219 178
+            background 80 73 69
+            emphasis_0 254 128 25
+            emphasis_1 142 192 124
+            emphasis_2 184 187 38
+            emphasis_3 211 134 155
+        }
+        ribbon_unselected {
+            base 235 219 178
+            background 80 73 69
+            emphasis_0 251 73 52
+            emphasis_1 250 189 47
+            emphasis_2 131 165 152
+            emphasis_3 211 134 155
+        }
+        ribbon_selected {
+            base 40 40 40
+            background 250 189 47
+            emphasis_0 251 73 52
+            emphasis_1 254 128 25
+            emphasis_2 211 134 155
+            emphasis_3 131 165 152
+        }
+        table_title {
+            base 250 189 47
+            background 0
+            emphasis_0 254 128 25
+            emphasis_1 142 192 124
+            emphasis_2 184 187 38
+            emphasis_3 211 134 155
+        }
+        table_cell_unselected {
+            base 235 219 178
+            background 40 40 40
+            emphasis_0 254 128 25
+            emphasis_1 142 192 124
+            emphasis_2 184 187 38
+            emphasis_3 211 134 155
+        }
+        table_cell_selected {
+            base 235 219 178
+            background 80 73 69
+            emphasis_0 254 128 25
+            emphasis_1 142 192 124
+            emphasis_2 184 187 38
+            emphasis_3 211 134 155
+        }
+        list_unselected {
+            base 235 219 178
+            background 40 40 40
+            emphasis_0 254 128 25
+            emphasis_1 142 192 124
+            emphasis_2 184 187 38
+            emphasis_3 211 134 155
+        }
+        list_selected {
+            base 235 219 178
+            background 80 73 69
+            emphasis_0 254 128 25
+            emphasis_1 142 192 124
+            emphasis_2 184 187 38
+            emphasis_3 211 134 155
+        }
+        frame_unselected {
+            base 102 92 84
+            background 0
+            emphasis_0 254 128 25
+            emphasis_1 142 192 124
+            emphasis_2 211 134 155
+            emphasis_3 0
+        }
+        frame_selected {
+            base 184 187 38
+            background 0
+            emphasis_0 254 128 25
+            emphasis_1 142 192 124
+            emphasis_2 211 134 155
+            emphasis_3 0
+        }
+        frame_highlight {
+            base 254 128 25
+            background 0
+            emphasis_0 211 134 155
+            emphasis_1 254 128 25
+            emphasis_2 254 128 25
+            emphasis_3 254 128 25
+        }
+        exit_code_success {
+            base 184 187 38
+            background 0
+            emphasis_0 142 192 124
+            emphasis_1 40 40 40
+            emphasis_2 211 134 155
+            emphasis_3 131 165 152
+        }
+        exit_code_error {
+            base 251 73 52
+            background 0
+            emphasis_0 250 189 47
+            emphasis_1 0
+            emphasis_2 0
+            emphasis_3 0
+        }
+        multiplayer_user_colors {
+            player_1 211 134 155
+            player_2 131 165 152
+            player_3 0
+            player_4 250 189 47
+            player_5 142 192 124
+            player_6 0
+            player_7 251 73 52
+            player_8 0
+            player_9 0
+            player_10 0
+        }
+    }
+}
