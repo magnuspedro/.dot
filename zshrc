@@ -19,7 +19,10 @@ alias rmt="cd /Users/magnus/iCloud/Documents/Studies/spring-rmt"
 
 
 
-eval "$(zellij setup --generate-auto-start zsh)"
+# Abre tmux automaticamente na sessão Zuul (cria se não existir)
+if [[ -o interactive && -z "$TMUX" && -z "$ZELLIJ" ]] && command -v tmux >/dev/null; then
+  tmux new-session -A -s Zuul
+fi
 
 
 # Added by Antigravity CLI installer
