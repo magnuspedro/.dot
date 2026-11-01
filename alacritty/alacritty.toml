@@ -1,0 +1,4 @@
+# Option esquerdo funciona como Alt (atalhos Alt do tmux).
+# Option direito continua digitando caracteres especiais (ç, acentos, etc.).
+[window]
+option_as_alt = "OnlyLeft"
