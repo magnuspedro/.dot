@@ -4,17 +4,20 @@ This is the repository of dot files from Pedro Magnus.
 
 ## Installation
 
-The `install.sh` script is used to put the files in the right place. To run the script, use the following command:
+Clone the repo into `~/.dot` (the configs reference that path) and run:
 
 ```sh
-./install.sh
+./install.sh              # menu to pick what to install
+./install.sh tmux zsh     # install only the listed items
+./install.sh --all        # install everything without asking
 ```
 
-Make sure you have the necessary permissions to execute the script. You can grant execute permissions with:
+Items: `zsh`, `tmux`, `zellij`, `alacritty`. The script creates symlinks and can be
+run again safely: items already linked are skipped. If something else already exists
+at the destination, it warns and asks whether to remove it with a backup (`*.bak`),
+remove it without a backup, or skip it. Without a terminal it always makes a backup.
 
-```sh
-chmod +x install.sh
-```
+In the menu: `↑/↓` or `j/k` move, `space` toggles, `a` toggles all, `enter` confirms, `q` quits.
 
 ## Contents
 
