@@ -1,4 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
+export ATAC_KEY_BINDINGS="$HOME/.dot/vim_key_bindings.toml"
 
 ZSH_THEME="spaceship"
 
@@ -8,13 +9,24 @@ source $ZSH/oh-my-zsh.sh
 
 eval $(/opt/homebrew/bin/brew shellenv)
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-export GOROOT=~/.asdf/installs/golang/1.21.4/go
+unset GOROOT
+
+export PATH="${GOPATH:-$HOME/go}/bin:$HOME/.local/bin:$PATH"
 
 alias rmt="cd /Users/magnus/iCloud/Documents/Studies/spring-rmt"
 
 [ -f "/Users/magnus/.ghcup/env" ] && source "/Users/magnus/.ghcup/env" # ghcup-env
 
-if [ "$TMUX" = "" ]; then tmux; fi
 
+
+eval "$(zellij setup --generate-auto-start zsh)"
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/magnus/.local/bin:$PATH"
+
+# Stop macOS AppleDouble ._ files on CLI copies
+export COPYFILE_DISABLE=1
+
+eval "$(/opt/homebrew/bin/mise activate zsh)"
 
